@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Sidebar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #f2f2f2;
+      height: 100vh;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .sidebar__header {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .sidebar__nav {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar__nav-item {
+      margin-bottom: 10px;
+    }
+
+    .sidebar__nav-item a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 5px;
+    }
+
+    .sidebar__nav-item a:hover {
+      background-color: #ddd;
+    }
+
+    /* Main Menu hover effect */
+    .sidebar__nav-item:hover {
+      background-color: #ddd;
+    }
+
+    /* BEM Modifiers */
+    .sidebar__nav-item--active a {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .sidebar__nav-item--unread a {
+      position: relative;
+    }
+
+    .sidebar__nav-item--unread .unread-count {
+      background-color: red;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 50%;
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar__header">📬 Mail App</div>
+    <ul class="sidebar__nav">
+      <li class="sidebar__nav-item sidebar__nav-item--active"><a href="#">📥 Inbox</a></li>
+      <li class="sidebar__nav-item"><a href="#">⭐️ Starred</a></li>
+      <li class="sidebar__nav-item sidebar__nav-item--unread"><a href="#">⏱ Snoozed<span class="unread-count">1</span></a></li>
+      <li class="sidebar__nav-item"><a href="#">➡️ Sent</a></li>
+      <li class="sidebar__nav-item"><a href="#">📄 Drafts</a></li>
+    </ul>
+  </div>
+</body>
+</html>
